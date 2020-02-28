@@ -1,5 +1,5 @@
 {
-    "name": "vamtiger-user-registry",
+    "name": "vamtiger-user-registry-test-web-component",
     "version": "0.0.1",
     "description": "An abstracted user registry webcomponent",
     "main": "build",
