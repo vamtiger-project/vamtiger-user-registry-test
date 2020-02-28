@@ -57,13 +57,5 @@ exports.default = () => describe('named slots', function () {
                 .to.be.ok;
         });
     });
-    it(types_1.SlotName.footer, function () {
-        var _a;
-        return __awaiter(this, void 0, void 0, function* () {
-            const selector = `slot[name="${types_1.SlotName.footer}"]`;
-            chai_1.expect((_a = element === null || element === void 0 ? void 0 : element.shadowRoot) === null || _a === void 0 ? void 0 : _a.querySelector(selector))
-                .to.be.ok;
-        });
-    });
 });
 //# sourceMappingURL=slots.js.map
