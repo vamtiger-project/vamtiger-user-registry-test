@@ -1,0 +1,34 @@
+:root {
+    --vamtiger-user-listing-fade-user-z-index: 1;
+    --vamtiger-user-listing-fade-action-z-index: 2;
+    --vamtiger-user-listing-fade-overlay-z-index: 3;
+    --vamtiger-user-listing-fade-test-mode-z-index: 4;
+
+    --vamtiger-user-listing-fade-in-animation:
+        vamtigerUserListingFadeIn
+        387ms
+        linear
+        forwards;
+    --vamtiger-user-listing-overlay-fade-in-animation:
+        vamtigerUserListingFadeIn
+        135ms
+        linear
+        forwards;
+    --vamtiger-user-listing-overlay-offset-top: 2em;
+    --vamtiger-user-listing-overlay-animation-duration: 135ms;
+    --vamtiger-user-listing-overlay-slide-in-animation:
+        vamtigerUserListingSlideIn
+        var(--vamtiger-user-listing-overlay-animation-duration);
+
+    --vamtiger-user-listing-delete-button-width: 2em;
+    --vamtiger-user-listing-delete-button-transition: 235ms right;
+
+    --vamtiger-user-listing-overlay-background: radial-gradient(transparent, black);
+
+    --vamtiger-user-listing-overlay-button-text-color: white;
+    --vamtiger-user-listing-overlay-button-background-color: black;
+    --vamtiger-user-listing-overlay-cancel-button-text-color: gray;
+    --vamtiger-user-listing-overlay-cancel-button-background-color: white;
+    --vamtiger-user-listing-overlay-button-width: 8em;
+    --vamtiger-user-listing-overlay-button-height: 3.4em;
+}

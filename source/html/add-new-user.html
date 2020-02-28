@@ -1,0 +1,53 @@
+<div slot="overlay" data-confirm-dialog data-confirm-add-new-user>
+    <div data-confirm-header>
+        Add new user
+    </div>
+
+    <div data-header-underline></div>
+
+    <div data-confirm-body data-display-grid>
+        <form data-add-new-user-form data-confirm-input-form data-display-grid>
+            <div form-group>
+                <label for="addNewUserNameInput">
+                    Name
+                </label>
+                <input id="addNewUserNameInput" name="name">
+                <span data-error></span>
+            </div>
+
+            <div form-group>
+                <label for="addNewUserSurnameInput">
+                    Surname
+                </label>
+                <input id="addNewUserSurnameInput" name="surname">
+                <span data-error></span>
+            </div>
+
+            <div form-group>
+                <label for="addNewUserEmailInput">
+                    Email
+                </label>
+                <input type="email" id="addNewUserEmailInput" name="email">
+                <span data-error></span>
+            </div>
+
+            <div form-group>
+                <label for="addNewUserPositionInput">
+                    Position
+                </label>
+                <input id="addNewUserPositionInput" name="position">
+                <span data-error data-default-error-message="Please enter your current position"></span>
+            </div>
+        </form>
+    </div>
+
+    <div data-confirm-footer>
+        <button data-confirm-button data-confirm-button-ok>
+            <span>Confirm</span>
+        </button>
+
+        <button data-confirm-button data-confirm-button-cancel>
+            <span>Cancel</span>
+        </button>
+    </div>
+</div>

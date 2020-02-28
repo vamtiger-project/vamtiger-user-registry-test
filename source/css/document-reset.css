@@ -1,0 +1,20 @@
+vamtiger-user-registry
+{
+    & button,
+    & form,
+    & fieldset,
+    & label,
+    & input
+    {
+        margin: nonne;
+        padding:  none;
+        border: none;
+        outline: none;
+        -webkit-appearance: none;
+    }
+
+    & button
+    {
+        cursor: pointer;
+    }
+}

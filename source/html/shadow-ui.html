@@ -1,0 +1,53 @@
+<div data-vamtiger-user-listing>
+    <div data-test-mode>
+        <span data-title>
+            test mode
+        </span>
+
+        <div data-separator></div>
+
+        <div data-layout-markers-controls>
+            <span data-label>
+                layout markers
+            </span>
+
+            <div data-layout-markers-toggle></div>
+        </div>
+    </div>
+
+    <div data-header>
+        <div data-header-overlay></div>
+        <figure data-header-image>
+            <slot name="header-image"></slot>
+        </figure>
+        <div data-header-caption>
+            <slot name="header-caption"></slot>
+        </div>
+    </div>
+
+    <div data-body>
+        <div data-left-side-bar></div>
+
+        <div data-user-listing>
+            <div data-action>
+                <slot name="action"></slot>
+            </div>
+
+            <div data-users>
+                <slot name="user"></slot>
+            </div>
+        </div>
+
+        <div data-right-side-bar></div>
+    </div>
+
+    <div data-footer>
+        <a data-backend>Laravel</a>
+        <span data-separator></span>
+        <a data-frontend>Web Components</a>
+    </div>
+
+    <div data-overlay>
+        <slot name="overlay"></slot>
+    </div>
+</div>
