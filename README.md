@@ -1,4 +1,4 @@
-# vamtiger-user-registry-test
+# vamtiger-user-registry
 A webcomponent for viewing, adding and deleting users from a generalised registry.
 
 # Installation
