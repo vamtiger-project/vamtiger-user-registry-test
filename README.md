@@ -118,7 +118,7 @@ The custom element can also be rendered in **_test mode_** to toggle layout mark
 ```
 [Demo](https://vamtiger-project.github.io/vamtiger-user-registry-web-component/build/)
 
-## Example Backend API
+# Example Backend API
 |Langauage|Framework|Repository|
 |-|-|-|
 |PHP|Laravel|[vamtiger-user-registry-laravel](https://github.com/vamtiger-project/vamtiger-user-registry-laravel)|
