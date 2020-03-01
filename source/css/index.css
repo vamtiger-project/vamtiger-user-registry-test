@@ -6,6 +6,7 @@
     display: inline-block;
     position: relative;
     touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 
     opacity: 0;
 
