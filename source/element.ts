@@ -36,7 +36,7 @@ css && Promise
 
 export default class VamtigerUserRegistry extends HTMLElement implements IUserRegistryElement {
     readonly params: IParams;
-    readonly user = new Map<HTMLElement, IUser>();
+    user = new Map<HTMLElement, IUser>();
     deleteUserElement?: HTMLElement;
     requestUrls = new Set<string>();
     footerObserver?: MutationObserver;
