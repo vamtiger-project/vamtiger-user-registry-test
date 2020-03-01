@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-user-registry",
-    "version": "0.0.4-0",
+    "version": "0.0.4",
     "description": "An abstracted user registry webcomponent",
     "main": "build/vamtiger-user-registry",
     "scripts": {
