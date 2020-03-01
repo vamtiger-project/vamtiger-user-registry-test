@@ -1,8 +1,8 @@
 {
-    "name": "vamtiger-user-registry-test-web-component",
-    "version": "0.0.1",
-    "description": "An abstracted user registry webcomponent",
-    "main": "build",
+    "name": "vamtiger-user-registry",
+    "version": "0.0.4-0",
+    "description": "A user registry custom element",
+    "main": "build/vamtiger-user-registry",
     "scripts": {
         "test": "npm run clean && npm run build && npm run bundle-node-test && npm run bundle-browser-test && npm run mocha && npm run bundle-source",
         "mocha": "mocha build/test/node --recursive",

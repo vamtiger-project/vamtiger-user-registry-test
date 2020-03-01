@@ -31,15 +31,3 @@ vamtiger-user-registry
 {
     opacity: 0;
 }
-
-vamtiger-user-registry[data-connected]
-{
-    opacity: 1;
-}
-
-vamtiger-user-registry[data-connected] img
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}

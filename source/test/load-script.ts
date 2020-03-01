@@ -1,5 +1,5 @@
-import * as VBM from 'vamtiger-browser-method/build/types';
 import { expect } from 'chai';
+import {getElement} from './browser';
 
 const { VamtigerBrowserMethod } = window;
 const { loadScript } = VamtigerBrowserMethod;
@@ -11,7 +11,7 @@ export default () => describe('vamtiger-user-registry', function () {
         });
     });
 
-    it('load script', async function() {
+    it('load script', function() {
         const script = document.head.querySelector('[src="vamtiger-user-registry.js"]');
 
         expect(script instanceof HTMLScriptElement).to.be.true;

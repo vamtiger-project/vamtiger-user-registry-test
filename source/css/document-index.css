@@ -4,6 +4,8 @@
 
 vamtiger-user-registry
 {
+    opacity: 0;
+
     & [data-button],
     & form label,
     & form input
@@ -167,6 +169,11 @@ vamtiger-user-registry
 vamtiger-user-registry[data-connected]
 {
     animation: var(--vamtiger-user-listing-fade-in-animation);
+
+    /* & [slot="user"]
+    {
+        animation: var(--vamtiger-user-listing-fade-in-animation);
+    } */
 }
 
 vamtiger-user-registry[data-confirm]

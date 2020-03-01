@@ -14,8 +14,14 @@ import { confirm as confirmDelete } from './delete-user';
 const { requestIdleCallback } = self;
 
 export default function (params: IHandleUser) {
+    const { element } = params;
+
+    if (!element.user) {
+        element.user = new Map();
+    }
+
     if (requestIdleCallback) {
-        handleUser(params);
+        requestIdleCallback(() => handleUser(params));
     } else {
         setTimeout(() => handleUser(params), idleTimeout);
     }
@@ -23,7 +29,7 @@ export default function (params: IHandleUser) {
 
 function handleUser({element, user}: IHandleUser) {
     const { name, surname, email } = user;
-    const ignore = Array
+    const ignore = element.user && Array
         .from(element.user.values())
         .some(({id}) => id === user.id);
     const userTemplate = !ignore && [

@@ -143,10 +143,10 @@ export interface IGetUserSuccessResponse {
 }
 
 export interface IGetUserFailedResponse {
-    "result": "failed",
-    "message": "retrieved user(s) failed",
-    "data": {
-        "user": 102
+    result: "failed",
+    message: "retrieved user(s) failed",
+    data: {
+        user: number;
     }
 }
 

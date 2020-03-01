@@ -13,6 +13,7 @@ import {
     shadowRoot as shadowRootConfig,
     observedAttributes,
     footerObserver as footerObserverConfig,
+    observer as observerConfig,
     clickEventName,
     dependencies,
     customEvent
@@ -35,7 +36,7 @@ css && Promise
 
 export default class VamtigerUserRegistry extends HTMLElement implements IUserRegistryElement {
     readonly params: IParams;
-    user = new Map<HTMLElement, IUser>();
+    readonly user = new Map<HTMLElement, IUser>();
     deleteUserElement?: HTMLElement;
     requestUrls = new Set<string>();
     footerObserver?: MutationObserver;

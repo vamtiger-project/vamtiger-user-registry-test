@@ -4,8 +4,8 @@ import {getElement} from './browser';
 import handleUser from '../handle-user';
 import { IUser } from '../types';
 
-export default () => describe('Test Mode', function () {
-    const element = getElement();
+export default () => describe('Test Mode', async function () {
+    const element = await getElement();
     const numberOfRecords = 100;
 
     it(`Fake Data: ${numberOfRecords} records`, async function () {

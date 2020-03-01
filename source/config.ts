@@ -22,6 +22,10 @@ export const customEvent = {
 
 export const idleTimeout = 1;
 
+export const observer = {
+    childList: true
+};
+
 export const footerObserver = {
     attributes: true
 };

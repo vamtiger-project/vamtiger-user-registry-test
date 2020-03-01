@@ -36,12 +36,10 @@ export default async function getUsers({ element }: IGetUsers) {
             params.getUsersNextPageUrl = usersResponse?.data?.users?.next_page_url || '';
 
             for (const user of currentUsers) {
-                handleUser({
+                await handleUser({
                     element,
                     user
                 });
-
-                await pause({milliseconds: handleUserTimeout});
             }
 
             let footerVisible = Number(footer?.dataset?.visible || 0);
