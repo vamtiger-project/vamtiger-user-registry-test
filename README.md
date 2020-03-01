@@ -116,7 +116,7 @@ The custom element can also be rendered in **_test mode_** to toggle layout mark
     data-test-mode
 </vamtiger-user-registry>
 ```
-[Demo](https://vamtiger-project.github.io/vamtiger-user-registry-test-web-component/build/)
+[Demo](https://vamtiger-project.github.io/vamtiger-user-registry-web-component/build/)
 
 ## Example Backend API
 |Langauage|Framework|Repository|
