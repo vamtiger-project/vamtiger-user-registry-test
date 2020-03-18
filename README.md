@@ -143,11 +143,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vamtiger-user-registry.component.css']
 })
 export class VamtigerUserRegistryComponent implements OnInit {
-  getUsersUrl = 'http://127.0.0.1:8000/api/get-users';
-  getUserUrl = 'http://127.0.0.1:8000/api/get-user';
-  addNewUserUrl = 'http://127.0.0.1:8000/api/add-new-user';
-  deleteUserUrl = 'http://127.0.0.1:8000/api/delete-user';
-  headerImageurl = 'https://vamtiger-project.github.io/vamtiger-mental-health-botswana-json-ld/vamtiger-mental-health-botswana-2018-json-ld.jpg';
+  getUsersUrl = 'api/get-users';
+  getUserUrl = 'api/get-user';
+  addNewUserUrl = 'api/add-new-user';
+  deleteUserUrl = 'api/delete-user';
+  headerImageurl = 'https://some/heade/image/url';
 
   constructor() { }
 
@@ -182,31 +182,28 @@ class VamtigerUserRegistryReact extends React.Component {
         super(props);
 
         this.vamtigerUserRegistry = React.createRef();
-    }
 
-    componentDidMount() {
-        const vamtigerUserRegistry = this.vamtigerUserRegistry.current;
-
-        if (vamtigerUserRegistry) {
-            vamtigerUserRegistry.addEventListener(EventName.connected, () => this.handleConnected());
+        this.state = {
+            data: {
+                'data-test-mode': true,
+                'data-get-users-url': '/api/get-users'
+                'data-get-user-url': '/api/get-user',
+                'add-new-user-url': '/api/add-new-user',
+                'delete-user-url': '/api/delete-user'
+            },
+            headerImageUrl: 'https://some/heade/image/url'
         }
-    }
-
-    handleConnected() {
-        const container = this.vamtigerUserRegistry.current?.parentElement;
-
-        if (container) {
-            container.parentElement?.removeChild(container);
-        }
-
-        resolve();
     }
 
     render() {
+        const { data, headerImageurl } = this.state;
+
         return (
             <vamtiger-user-registry
                 ref={this.vamtigerUserRegistry}
+                {...data}
             >
+                <img slot="header-image" src={headerImageurl}>
             </vamtiger-user-registry>
         );
     }
