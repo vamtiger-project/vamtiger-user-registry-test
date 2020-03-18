@@ -22,7 +22,6 @@ A webcomponent for viewing, adding and deleting users from a generalised registr
 |**data-add-new-user-url**|POST|Enpoint for adding a new user record|
 |**data-delete-user-url**|DELETE|Enpoint for removing a user record|
 
-
 ## data-get-users-url
 An endpoint returning a paginated list of users.
 
@@ -108,7 +107,7 @@ interface IDeleteUserResponse extends IResponseBase {
 }
 ```
 
-# Test Mode
+## Test Mode
 The custom element can also be rendered in **_test mode_** to toggle layout markers.
 
 ```html
@@ -117,6 +116,111 @@ The custom element can also be rendered in **_test mode_** to toggle layout mark
 </vamtiger-user-registry>
 ```
 [Demo](https://vamtiger-project.github.io/vamtiger-user-registry-web-component/build/)
+
+## [Angular](https://angular.io) Compatibility
+Custom elements integrate fairly easily with [Angular](https://angular.io). To enable support, update _**app.module.ts**_:
+```typescript
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+@NgModule({
+    ...,
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+});
+```
+
+Create a placeholder component:
+```bash
+ng generate component vamtiger-user-registry
+```
+
+Define the required url properties for the newly created component, _**vamtiger-user-registry.component.ts**_:
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-vamtiger-user-registry',
+  templateUrl: './vamtiger-user-registry.component.html',
+  styleUrls: ['./vamtiger-user-registry.component.css']
+})
+export class VamtigerUserRegistryComponent implements OnInit {
+  getUsersUrl = 'http://127.0.0.1:8000/api/get-users';
+  getUserUrl = 'http://127.0.0.1:8000/api/get-user';
+  addNewUserUrl = 'http://127.0.0.1:8000/api/add-new-user';
+  deleteUserUrl = 'http://127.0.0.1:8000/api/delete-user';
+  headerImageurl = 'https://vamtiger-project.github.io/vamtiger-mental-health-botswana-json-ld/vamtiger-mental-health-botswana-2018-json-ld.jpg';
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+```
+
+Reference *vamtiger-user-registry* in the component template (i.e. _**vamtiger-user-registry.component.html**_):
+```html
+<vamtiger-user-registry
+[attr.data-get-users-url]="getUsersUrl"
+[attr.data-get-user-url]="getUserUrl"
+[attr.add-new-user-url]="addNewUserUrl"
+[attr.delete-user-url]="deleteUserUrl"
+[slot]=""
+>
+    <img slot="header-image" [src]="headerImageurl">
+    <div slot="header-caption">
+        Vamtiger User Registry Angular
+    </div>
+</vamtiger-user-registry>
+```
+## [React](https://reactjs.org) Compatibility
+Custom Elements can also be used with [React](https://reactjs.org):
+```typescript
+class VamtigerUserRegistryReact extends React.Component {
+    readonly vamtigerUserRegistry: React.RefObject<VamtigerUserRegistry>;
+
+    constructor(props: any) {
+        super(props);
+
+        this.vamtigerUserRegistry = React.createRef();
+    }
+
+    componentDidMount() {
+        const vamtigerUserRegistry = this.vamtigerUserRegistry.current;
+
+        if (vamtigerUserRegistry) {
+            vamtigerUserRegistry.addEventListener(EventName.connected, () => this.handleConnected());
+        }
+    }
+
+    handleConnected() {
+        const container = this.vamtigerUserRegistry.current?.parentElement;
+
+        if (container) {
+            container.parentElement?.removeChild(container);
+        }
+
+        resolve();
+    }
+
+    render() {
+        return (
+            <vamtiger-user-registry
+                ref={this.vamtigerUserRegistry}
+            >
+            </vamtiger-user-registry>
+        );
+    }
+}
+
+const container = document.createElement('div');
+container.id = 'vamtiger-user-registry-react';
+document.body.appendChild(container);
+
+ReactDOM.render(
+    <VamtigerUserRegistryReact />,
+    container
+);
+```
 
 # Example Backend API
 |Langauage|Framework|Repository|
