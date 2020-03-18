@@ -226,3 +226,4 @@ ReactDOM.render(
 |Langauage|Framework|Repository|
 |-|-|-|
 |PHP|Laravel|[vamtiger-user-registry-laravel](https://github.com/vamtiger-project/vamtiger-user-registry-laravel)|
+|Python|Django|[vamtiger-user-registry-django](https://github.com/vamtiger-project/vamtiger-user-registry-django)|
