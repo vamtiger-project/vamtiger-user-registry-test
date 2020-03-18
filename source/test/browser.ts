@@ -1,10 +1,11 @@
 import { setup, run } from 'mocha';
 import loadScript from './load-script';
+import { Selector, EventName } from '../types';
+import VamtigerUserRegistry, { name } from '../element';
 import dispatchEvent from './dispatch-event';
 import slots from './slots';
 import fakeData from './fake-data';
-import VamtigerUserRegistry, { name } from '../element';
-import { Selector, EventName } from '../types';
+import compatibility from './compatibility';
 
 setup('bdd');
 
@@ -12,6 +13,7 @@ loadScript();
 slots();
 dispatchEvent();
 fakeData();
+compatibility();
 
 run();
 

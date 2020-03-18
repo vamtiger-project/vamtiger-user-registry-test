@@ -7,35 +7,36 @@
 
     <div data-confirm-body data-display-grid>
         <form data-add-new-user-form data-confirm-input-form data-display-grid>
-            <div form-group>
-                <label for="addNewUserNameInput">
-                    Name
+            <div data-form-group>
+                <label>
+                    <span>Name</span>
+                    <input name="name">
                 </label>
-                <input id="addNewUserNameInput" name="name">
+
                 <span data-error></span>
             </div>
 
-            <div form-group>
-                <label for="addNewUserSurnameInput">
-                    Surname
+            <div data-form-group>
+                <label>
+                    <span>Surname</span>
+                    <input name="surname">
                 </label>
-                <input id="addNewUserSurnameInput" name="surname">
                 <span data-error></span>
             </div>
 
-            <div form-group>
-                <label for="addNewUserEmailInput">
-                    Email
+            <div data-form-group>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email">
                 </label>
-                <input type="email" id="addNewUserEmailInput" name="email">
                 <span data-error></span>
             </div>
 
-            <div form-group>
-                <label for="addNewUserPositionInput">
-                    Position
+            <div data-form-group>
+                <label>
+                    <span>Position</span>
+                    <input name="position">
                 </label>
-                <input id="addNewUserPositionInput" name="position">
                 <span data-error data-default-error-message="Please enter your current position"></span>
             </div>
         </form>

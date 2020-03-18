@@ -83,12 +83,12 @@ export interface IUserRegistryElementDataset extends DOMStringMap{
     deleteUserUrl?: string;
     addNewUserUrl?: string;
     handleUserTimeot?: string;
-    hover?: string;
     confirm?: 'Delete user' | 'Add new user';
     layoutMarkers?: string;
     testMode?: string;
     error?: string;
     defaultErrorMessage?: string;
+    inactivateUserElementRender?: string;
 }
 
 export interface IHandleFooter {
@@ -242,3 +242,11 @@ export type GetTemplate<P extends IGetTemplate> =
         | Selector.confirmAddNewUserDialog
         ? HTMLDivElement :
     null;
+
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            'vamtiger-user-registry': React.DetailedHTMLProps<React.HTMLAttributes<VamtigerUserRegistry>, VamtigerUserRegistry>;
+        }
+    }
+}

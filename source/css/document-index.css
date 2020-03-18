@@ -63,7 +63,7 @@ vamtiger-user-registry
         pointer-events: none;
     }
 
-    & [slot="user"][data-hover] [data-delete]
+    & [slot="user"]:hover [data-delete]
     {
         right: 0;
     }
@@ -141,12 +141,18 @@ vamtiger-user-registry
         {
             grid-row-gap: 1em;
 
-            & [form-group]
+            & [data-form-group]
             {
                 display: grid;
                 grid-row-gap: 0.5em;
                 position: relative;
                 grid-auto-rows: minmax(1.2em, auto);
+
+                & label
+                {
+                    display: grid;
+                    grid-row-gap: 0.5em;
+                }
 
                 & input
                 {

@@ -38,7 +38,7 @@
 
         & [data-test-mode]
         {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             z-index: var(--vamtiger-user-listing-fade-test-mode-z-index);

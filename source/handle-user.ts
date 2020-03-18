@@ -28,6 +28,7 @@ export default function (params: IHandleUser) {
 }
 
 function handleUser({element, user}: IHandleUser) {
+    const { params } = element;
     const { name, surname, email } = user;
     const ignore = element.user && Array
         .from(element.user.values())
@@ -51,6 +52,8 @@ function handleUser({element, user}: IHandleUser) {
     if (userElement) {
         element.user.set(userElement, user);
 
+        userElement.addEventListener(clickEventName, () => confirmDelete({element, userElement}));
+
         element.appendChild(userElement);
 
         element.dispatchEvent(new CustomEvent(
@@ -60,9 +63,5 @@ function handleUser({element, user}: IHandleUser) {
                 detail: {user}
             }
         ));
-
-        userElement.addEventListener('mouseenter', () => userElement.dataset.hover = '');
-        userElement.addEventListener('mouseleave', () => delete userElement.dataset.hover);
-        userElement.addEventListener(clickEventName, () => confirmDelete({element, userElement}));
     }
 }
