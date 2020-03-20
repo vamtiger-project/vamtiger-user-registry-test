@@ -58,14 +58,17 @@ export function handleFailure({ element, response }: IAddNewUser & {response: IA
     const form = element.querySelector<HTMLFormElement>(Selector.addNewUserForm);
     const errorElements = form && new Set(Array.from(form.querySelectorAll<HTMLElement>(Selector.addNewUserFormInputError)) ||  []);
 
+    let formGroup: HTMLElement | null;
     let selector: string;
     let errorSelector: string;
     let error: string;
     let input: HTMLInputElement | null;
-    let inputData: IUserRegistryElement['dataset'] | undefined;;
+    let inputData: IUserRegistryElement['dataset'] | undefined;
     let inputError: HTMLElement | null;
     let inputErrorData: IUserRegistryElement['dataset'] | undefined;
+    let formGroupErrorData: IUserRegistryElement['dataset'] | undefined;
 
+    console.log({response});
     if (form) for (const field in response.data) {
         selector = `input[name="${field.split('.').pop() || ''}"]`;
         errorSelector = `${selector} ~ ${Selector.addNewUserFormError}`;
@@ -73,14 +76,18 @@ export function handleFailure({ element, response }: IAddNewUser & {response: IA
             || response.data[field][0].error
             || '';
         input = form.querySelector(selector)
-        inputError = form?.querySelector(errorSelector) || null;
+        formGroup = input?.closest<HTMLElement>(Selector.formGroup) || null;
+        inputError = formGroup?.querySelector(Selector.addNewUserFormError) || null;
         inputData = input?.dataset;
         inputErrorData = inputError?.dataset;
+        formGroupErrorData = formGroup?.dataset;
 
-        if (inputData && inputErrorData) {
+        if (inputData && inputErrorData && formGroupErrorData) {
             inputData.error = '';
+            formGroupErrorData.error = '';
             inputErrorData.error = inputErrorData.defaultErrorMessage || error;
 
+            formGroup && errorElements?.delete(formGroup);
             input && errorElements?.delete(input);
         }
     }

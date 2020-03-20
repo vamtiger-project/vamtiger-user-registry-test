@@ -159,8 +159,11 @@ vamtiger-user-registry
                     padding: 0.4em;
                     font-size: 1em;
                 }
+            }
 
-                & input[data-error] ~ [data-error]::after
+            & [data-form-group][data-error]
+            {
+                & label ~ [data-error]::after
                 {
                     display: inline-block;
                     content: attr(data-error);

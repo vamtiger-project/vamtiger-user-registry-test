@@ -18,9 +18,10 @@ export enum Selector {
     confirmButtonOkay = '[data-confirm-button-ok]',
     addNewUserButton = '[data-action-add-user]',
     addNewUserForm = '[data-add-new-user-form]',
-    addNewUserFormError = '[data-error]',
-    addNewUserFormInputError = 'input[data-error]',
-    layoutMarkersToggle = '[data-layout-markers-toggle]'
+    addNewUserFormError = 'label ~ [data-error]',
+    addNewUserFormInputError = '[data-form-group][data-error], input[data-error]',
+    layoutMarkersToggle = '[data-layout-markers-toggle]',
+    formGroup = '[data-form-group]'
 }
 
 export enum EventName {
