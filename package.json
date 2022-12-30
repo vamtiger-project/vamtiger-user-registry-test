@@ -48,7 +48,7 @@
         "chai": "^4.2.0",
         "faker": "^4.1.0",
         "live-server": "^1.2.1",
-        "mocha": "^7.0.1",
+        "mocha": "^10.2.0",
         "typescript": "^3.8.2",
         "vamtiger-bash": "0.0.25",
         "vamtiger-browser-method": "^0.107.28",
